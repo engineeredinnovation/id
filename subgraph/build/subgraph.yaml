@@ -1,0 +1,23 @@
+specVersion: 0.0.2
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: MetaNode
+    network: ropsten
+    source:
+      address: "0xB51935E1f7dfb5c4d6dF4c172A2557F6E9c897db"
+      abi: MetaNode
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - certifcateRequested
+      abis:
+        - name: MetaNode
+          file: MetaNode/abis/MetaNode.json
+      eventHandlers:
+        - event: certifcateRequested()
+          handler: handlecertifcateRequested
+      file: MetaNode/MetaNode.wasm
