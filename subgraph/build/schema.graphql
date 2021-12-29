@@ -1,4 +1,4 @@
-type ExampleEntity @entity {
+type MetaNode @entity {
   id: ID!
-  count: BigInt!
+  entityname: String!
 }
